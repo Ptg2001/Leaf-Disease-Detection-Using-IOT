@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        /* Internal CSS */
+       body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://img.freepik.com/free-photo/tropical-palm-leaves-pattern-background-green-monstera-tree-foliage-decoration-design-plant-with-exotic-leaf-closeup_90220-1135.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Set the height of the body to viewport height */
+}
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        p {
+            color: #666;
+            text-align: center;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        form {
+            text-align: center;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 10px; /* Added margin-bottom */
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Plant Disease Detector</h1>
+        {% if username %}
+            <p>Welcome, {{ username }}!</p>
+            <p><a href="/logout">Logout</a></p>
+            <form action="/detect_disease" method="post">
+                <input type="submit" value="Detect Plant Disease">
+            </form>
+
+            <form action="/result" method="get">
+                <input type="submit" value="Get Results">
+            </form>
+
+        {% else %}
+            <p>You are not logged in.</p>
+            <p><a href="/login">Login</a> or <a href="/register">Register</a> to continue.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
