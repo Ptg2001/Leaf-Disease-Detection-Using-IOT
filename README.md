@@ -1,4 +1,4 @@
-#Abstract
+# Abstract
 Leaf disease prompt identification and 
 surveillance in today's agricultural landscape is the key to 
 preserving crop vitality and obtaining high yields. To overcome 
